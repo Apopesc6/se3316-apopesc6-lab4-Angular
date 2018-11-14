@@ -12,11 +12,18 @@ export class CoursesComponent implements OnInit {
 
   title = "The title of courses page";
   courses;
+  update;
   
-  constructor(coursesService: CoursesService) { 
+  constructor(private coursesService: CoursesService) { 
     this.courses = coursesService.getCourses();
   }
-
+  
+  onClickMe(newCourse: string){
+    
+    this.update = this.coursesService.saveCourse(newCourse);
+    
+  }
+  
   ngOnInit() {
   }
 

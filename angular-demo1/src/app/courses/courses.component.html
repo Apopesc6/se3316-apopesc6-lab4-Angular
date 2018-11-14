@@ -2,7 +2,9 @@
 
 <h3>{{title}}</h3>
 
-<input type="text" appAutoGrow />
+<input #newCourse type="text" appAutoGrow />
+<button (click) = "onClickMe(newCourse.value)">Add Course</button>
+
 <ul>
     <li *ngFor="let course of courses">
         {{course}} 

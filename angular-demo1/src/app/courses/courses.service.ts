@@ -4,8 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CoursesService {
-  getCourses() : string[] {
-    return ["Course1", "Course2", "Course3"]
-  }
+  
+  private courseArray = ["Course1", "Course2", "Course3"];
+  
   constructor() { }
+  
+  getCourses() : string[] {
+    return this.courseArray;
+  }
+
+  saveCourse(nCourse: string) : void {
+    this.courseArray.push(nCourse);
+  }
+  
+  
 }
